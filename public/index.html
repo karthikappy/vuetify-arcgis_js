@@ -8,6 +8,8 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/css/main.css">
+    <script src="https://js.arcgis.com/4.15/"></script>
   </head>
   <body>
     <noscript>
@@ -15,5 +17,25 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+
+    <script>
+      require([
+        "esri/Map",
+        "esri/views/MapView"
+      ], function(Map, MapView) {
+  
+        var map = new Map({
+          basemap: "topo-vector"
+        });
+  
+        var view = new MapView({
+          container: "viewDiv",
+          map: map,
+          center: [-118.71511,34.09042],
+          zoom: 11
+        });
+  
+      });
+    </script>
   </body>
 </html>
