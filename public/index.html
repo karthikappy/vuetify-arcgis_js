@@ -17,24 +17,34 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
-
     <script>
       require([
         "esri/Map",
-        "esri/views/MapView"
-      ], function(Map, MapView) {
+        "esri/views/MapView",
+        "esri/widgets/BasemapGallery"
+      ], function(Map, MapView, BasemapGallery) {
   
         var map = new Map({
           basemap: "topo-vector"
         });
-  
+        
+        /* var basemapGallery = new BasemapGallery({
+          container:"basemap-container",
+          view: view
+        }); */
+        
         var view = new MapView({
           container: "viewDiv",
           map: map,
           center: [-118.71511,34.09042],
           zoom: 11
         });
-  
+        view.when(function() {
+          var basemapGallery = new BasemapGallery({
+            container:"basemap-container",
+            view: view
+          });
+        })
       });
     </script>
   </body>

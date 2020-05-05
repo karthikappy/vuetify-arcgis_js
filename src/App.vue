@@ -16,6 +16,20 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
+      
+      <v-card class="mx-auto" outlined>
+        <v-card-text>
+          <div class="overline mb-4">BASEMAP</div>
+          <div id="basemap-container"></div>
+        </v-card-text>
+      </v-card>
+      <v-card class="mx-auto" outlined>
+        <v-card-text>
+          <div class="overline mb-4">LAYERS</div>
+          <div id="layer-container"></div>
+        </v-card-text>
+      </v-card>
+      
     </v-navigation-drawer>
 
     <v-app-bar
